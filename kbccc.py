@@ -21,8 +21,10 @@ for i in range (0,len(questions)):
     print(f"\nQuestion for rupees.{levels[i]}")
     print(f"1. {question[1]}       2. {question[2]}")
     print(f"3. {question[2]}          4. {question[4]}")
-    reply =int(input("Enter your answer : "))
-     
+    reply =int(input("Enter your answer 1-4 or 0 for quit: "))
+    if reply == 0:
+        money = levels[i-1]
+        break
     if reply == question[-1]:
         print (f"\ncorrect answer, You have won Rs {levels[i]}") 
         if (i ==4):
@@ -34,4 +36,4 @@ for i in range (0,len(questions)):
     else:
         print("Wrong Answer .")
         break 
-print(f"your take home money is ${money}")   
+print(f"your take home money is Rs{money}")   
